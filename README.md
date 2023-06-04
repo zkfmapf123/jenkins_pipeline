@@ -24,7 +24,7 @@ terraform apply -var=file="path to gb.tfvars"
     추후 golang으로 자동화 pipeline 구성해야 함
 ```
 
-> Todo
+> Todo (Infra)
 
 - [x] Init VPC Setting
 - [ ] Basiton host (Public)
@@ -33,3 +33,8 @@ terraform apply -var=file="path to gb.tfvars"
 - [ ] Init Jenkins (Ansible)
 - [ ] Total Pipeline Managment use golang
 - [ ] CiCD
+
+> Todo (Task)
+
+- [ ] S3 Cleaner
+- [ ] Flow Entire Infra

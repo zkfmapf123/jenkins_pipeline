@@ -1,4 +1,4 @@
-package main
+package tasks
 
 import (
 	"bufio"
@@ -8,11 +8,12 @@ import (
 	"os/exec"
 
 	"github.com/spf13/cobra"
+	"zkfmapf123.github.com/devops-tools/utils"
 )
 
-func main() {
-
-	dirnames := getDirnames("../infra")
+func FolderMaker() {
+	utils.CmdClear()
+	dirnames := utils.GetDirnames("../infra")
 	installNeedFiles := []string{
 		"provider.tf",
 		"main.tf",
@@ -28,16 +29,15 @@ func main() {
 		Short: "Select Add to Items Folder? ",
 		Run: func(cmd *cobra.Command, args []string) {
 			foldername, _ := selectItem(dirnames)
-			cmdClear()
+			utils.CmdClear()
 			filename := writeToFilename()
-			cmdClear()
+			utils.CmdClear()
 			installFileFromPath(fmt.Sprintf("../infra/%s/%s", foldername, filename), installNeedFiles)
 
 			fmt.Println("Finish...")
 		},
 	}
 
-	rootCmd.AddCommand()
 	rootCmd.Execute()
 
 }
@@ -45,7 +45,9 @@ func main() {
 func selectItem(dirnames []string) (string, error) {
 	fmt.Println("Select to Folder Item")
 	for i, dir := range dirnames {
-		fmt.Printf("%d. %s\n", i+1, dir)
+		if dir != "" {
+			fmt.Printf("%d. %s\n", i+1, dir)
+		}
 	}
 
 	selectIndex := selectToItem()
@@ -96,24 +98,4 @@ func installFileFromPath(path string, filenames []string) {
 		cmd := exec.Command("touch", installPath)
 		cmd.Output()
 	}
-}
-
-func cmdClear() {
-	c := exec.Command("clear")
-	c.Stdout = os.Stdout
-	c.Run()
-}
-
-func getDirnames(folderpath string) []string {
-	dirs, err := os.ReadDir(folderpath)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	dirnames := make([]string, len(dirs))
-	for i, dir := range dirs {
-		dirnames[i] = dir.Name()
-	}
-
-	return dirnames
 }
