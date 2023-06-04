@@ -20,6 +20,7 @@ func main() {
 		"local.tf",
 		"data.tf",
 		"output.tf",
+		"vars.tf",
 	}
 
 	rootCmd := &cobra.Command{

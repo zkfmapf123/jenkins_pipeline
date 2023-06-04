@@ -12,3 +12,24 @@ terraform plan -var-file="path to gb.tfvars"
 terraform apply -var=file="path to gb.tfvars"
 
 ```
+
+> Init Stpe
+
+```
+    > network/private-vpc
+    > ec2/bastion
+    > alb/jenkins-alb
+    ...
+
+    추후 golang으로 자동화 pipeline 구성해야 함
+```
+
+> Todo
+
+- [x] Init VPC Setting
+- [ ] Basiton host (Public)
+- [ ] ALB use Jenkins
+- [ ] Jenkins (Private)
+- [ ] Init Jenkins (Ansible)
+- [ ] Total Pipeline Managment use golang
+- [ ] CiCD

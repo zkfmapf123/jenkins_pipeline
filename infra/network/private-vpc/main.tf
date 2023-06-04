@@ -54,7 +54,7 @@ resource "aws_subnet" "private_subnets" {
     map_public_ip_on_launch = true
 
     tags = {
-        Name = "${terraform.workspace}_${each.value}_public_subnet"
+        Name = "${terraform.workspace}_${each.value}_private_subnet"
     }
 }
 

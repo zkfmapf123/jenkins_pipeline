@@ -1,0 +1,10 @@
+{
+  "ec2": {
+    "ami": "",
+    "instance_type": ""
+  },
+
+  "ssh": {
+    "name": ""
+  }
+}

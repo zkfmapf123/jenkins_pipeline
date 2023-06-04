@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "my-terraform-practice"
-    key    = "network/private-vpc/terraform.tfstate"
+    key    = "ec2/bastion/terraform.state"
     region = var.region
   }
 }
