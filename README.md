@@ -1,5 +1,7 @@
 # Jenkins Pipeline
 
+![jenkins](./public/jenkins.png)
+
 > Terraform Backend
 
 - gloabl.tfvars로 region을 구별합니다.
@@ -27,9 +29,9 @@ terraform apply -var=file="path to gb.tfvars"
 > Todo (Infra)
 
 - [x] Init VPC Setting
-- [ ] Basiton host (Public)
-- [ ] ALB use Jenkins
-- [ ] Jenkins (Private)
+- [x] Basiton host (Public)
+- [x] ALB use Jenkins
+- [x] Jenkins (Private)
 - [ ] Init Jenkins (Ansible)
 - [ ] Total Pipeline Managment use golang
 - [ ] CiCD
