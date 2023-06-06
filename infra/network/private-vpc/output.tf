@@ -14,3 +14,7 @@ output "private_subnets" {
         for subnet in aws_subnet.private_subnets : subnet.availability_zone => subnet.id
     }
 }
+
+output "default_security_group_id" {
+    value = aws_vpc.private_vpc.default_security_group_id
+}

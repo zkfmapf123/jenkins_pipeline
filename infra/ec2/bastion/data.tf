@@ -6,7 +6,3 @@ data "terraform_remote_state" "vpc" {
         region = var.region
     }
 }
-
-output "vpc" {
-    value = data.terraform_remote_state.vpc.outputs
-}

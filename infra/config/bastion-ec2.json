@@ -1,10 +1,16 @@
 {
   "ec2": {
-    "ami": "",
-    "instance_type": ""
+    "ami": "ami-0c9c942bd7bf113a2",
+    "instance_type": "t2.micro",
+    "name": "bastion-ec2"
   },
 
   "ssh": {
-    "name": ""
+    "pulbic_ssh_path": "~/.ssh/id_rsa.pub",
+    "name": "bastion-ssh",
+    "description": "bastion host ssh",
+    "ingress_cidr_blocks": ["221.151.163.17/32"],
+    "ingress_rules": ["ssh-tcp"],
+    "egress_rules": ["all-all"]
   }
 }
