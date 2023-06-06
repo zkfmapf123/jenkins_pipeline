@@ -15,7 +15,14 @@ terraform apply -var=file="path to gb.tfvars"
 
 ```
 
-> Init Stpe
+> Bastion Host -> Private Subnet 접속
+
+```
+    1. ssh를 복사한 후 Bastion host ~/.ssh/id_rsa로 복사
+    2. ssh로 접속
+```
+
+> Init Step
 
 ```
     > network/private-vpc
@@ -32,11 +39,3 @@ terraform apply -var=file="path to gb.tfvars"
 - [x] Basiton host (Public)
 - [x] ALB use Jenkins
 - [x] Jenkins (Private)
-- [ ] Init Jenkins (Ansible)
-- [ ] Total Pipeline Managment use golang
-- [ ] CiCD
-
-> Todo (Task)
-
-- [ ] S3 Cleaner
-- [ ] Flow Entire Infra

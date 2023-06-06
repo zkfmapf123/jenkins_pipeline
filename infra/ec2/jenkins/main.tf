@@ -32,7 +32,7 @@ module "ec2" {
 
   availability_zone           = element(keys(local.vpc_config.private_subnets),0)
   subnet_id                   = element(values(local.vpc_config.private_subnets),0)
-  vpc_security_group_ids      = [module.http.security_group_id]
+  vpc_security_group_ids      = [module.http.security_group_id,local.vpc_config.default_security_group_id]
   associate_public_ip_address = true
 
   private_ip = local.ec2_config.private_ip
